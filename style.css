@@ -1,0 +1,520 @@
+/* ===========================
+   CSS VARIABLES & RESET
+=========================== */
+:root {
+  --green: #c8dfc0;
+  --green-dark: #a8c49e;
+  --green-card: #d4e8cc;
+  --green-box: #daecd2;
+  --pink: #f2bec8;
+  --pink-light: #fad8df;
+  --pink-bg: #f9cfd7;
+  --pink-card: #f5c8d2;
+  --text: #2e2e2e;
+  --text-light: #555;
+  --white: #fff;
+  --name-color: #c07080;
+  --btn-green: #8aab82;
+  --btn-green-hover: #6e9267;
+  --tag-bg: #b5cead;
+  --skill-bg: #b5cead;
+  --radius: 8px;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--green);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ===========================
+   NAVBAR — DESKTOP
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 48px;
+  background: var(--green);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+.logo span { font-weight: 300; color: var(--text-light); }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--name-color); font-weight: 700; }
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ===========================
+   HERO — DESKTOP (centered)
+=========================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 52px 24px 44px;
+  background: var(--green);
+}
+
+.avatar {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--green-dark);
+  color: var(--text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  letter-spacing: 1px;
+  border: 2px solid #9bbf92;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.hello { font-weight: 700; }
+.name { color: var(--name-color); font-style: italic; }
+
+.bio {
+  max-width: 540px;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  margin-bottom: 26px;
+  line-height: 1.75;
+}
+
+/* hero-body only matters on mobile; desktop ignores it */
+.hero-body { display: contents; }
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.btn {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+  border: none;
+}
+.btn-primary { background: var(--btn-green); color: var(--white); }
+.btn-primary:hover { background: var(--btn-green-hover); }
+.btn-secondary { background: var(--btn-green); color: var(--white); }
+.btn-secondary:hover { background: var(--btn-green-hover); }
+
+.btn-submit {
+  background: var(--green-dark);
+  color: var(--white);
+  border: none;
+  padding: 9px 34px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+.btn-submit:hover { background: var(--btn-green-hover); }
+
+/* ===========================
+   SECTIONS — DESKTOP
+=========================== */
+.section {
+  padding: 44px 48px;
+  background: var(--green);
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+/* ===========================
+   FILTER BUTTONS — ADDED
+=========================== */
+.filter-btns {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--btn-green);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--btn-green);
+  color: white;
+}
+
+/* ===========================
+   PROJECTS — rounded wrapper box
+=========================== */
+.projects-box {
+  background: var(--green-box);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: var(--green-card);
+  border-radius: var(--radius);
+  padding: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+.card h3 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+.tags span {
+  background: var(--tag-bg);
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  border-radius: 3px;
+  color: var(--text);
+}
+.card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.55; }
+
+/* ===========================
+   SKILLS — equal rectangular blocks
+=========================== */
+.skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.skill-tag {
+  background: var(--skill-bg);
+  padding: 9px 0;
+  width: 110px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: default;
+  transition: background 0.2s;
+}
+.skill-tag:hover { background: var(--green-dark); }
+
+/* ===========================
+   CONTACT FORM
+=========================== */
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 380px;
+}
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 0.85rem; font-weight: 400; color: var(--text); }
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid #c0d8b8;
+  border-radius: 5px;
+  padding: 9px 11px;
+  font-size: 0.85rem;
+  background: #edf6e8;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: var(--font-body);
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: var(--btn-green); }
+.form-group textarea { min-height: 100px; }
+
+.form-error {
+  color: #c0392b; font-size: 0.82rem;
+  background: #fce4e4; padding: 7px 11px; border-radius: 5px;
+}
+.form-success {
+  color: #2e7d32; font-size: 0.85rem;
+  background: #e8f5e9; padding: 7px 11px; border-radius: 5px;
+}
+.hidden { display: none; }
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 16px;
+  background: var(--green-dark);
+  font-size: 0.78rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ===========================
+   WEATHER BOX
+=========================== */
+.weather-box {
+  background: var(--green-box);
+  border-radius: 12px;
+  padding: 24px 28px;
+  max-width: 340px;
+}
+
+.weather-city {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.weather-temp {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--name-color);
+  margin-bottom: 6px;
+}
+
+.weather-wind {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.weather-desc {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.loader {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ===========================
+   MOBILE (≤ 600px) — PINK THEME
+=========================== */
+@media (max-width: 600px) {
+
+  body { background: var(--pink-light); }
+
+  /* Nav: burger menu — FIXED */
+  .navbar {
+    background: var(--pink-light);
+    padding: 10px 14px;
+    justify-content: space-between;
+    border-bottom: none;
+    position: relative;
+  }
+  .logo { display: block; font-size: 0.9rem; }
+  .burger { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--pink-light);
+    padding: 16px;
+    gap: 12px;
+    border-bottom: 1px solid var(--pink);
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 0.88rem; }
+
+  /* Hero: avatar centered, then h1 left, bio+btns side by side */
+  .hero {
+    background: var(--pink-light);
+    padding: 18px 14px 22px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .avatar {
+    background: var(--pink);
+    border-color: #dda0b0;
+    width: 64px; height: 64px;
+    font-size: 1.05rem;
+    align-self: center;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 { font-size: 1.25rem; margin-bottom: 10px; }
+
+  /* bio and buttons side-by-side */
+  .hero-body {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .bio {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    flex: 1;
+    text-align: left;
+    line-height: 1.55;
+    max-width: none;
+  }
+
+  .hero-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-start;
+    flex-shrink: 0;
+  }
+
+  .btn { font-size: 0.7rem; padding: 6px 11px; }
+  .btn-primary, .btn-secondary {
+    background: var(--btn-green);
+    color: var(--white);
+  }
+
+  /* Sections */
+  .section { background: var(--pink-light); padding: 18px 14px; }
+  .section h2 { font-size: 1.05rem; margin-bottom: 12px; }
+
+  /* Filter buttons on mobile */
+  .filter-btn {
+    border-color: #dda0b0;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: var(--pink);
+    color: var(--text);
+    border-color: var(--pink);
+  }
+
+  /* Projects: 3-column mini grid */
+  .projects-box {
+    background: var(--pink-bg);
+    border-radius: 10px;
+    padding: 12px 8px;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+  }
+  .card { background: var(--pink-card); padding: 9px 7px; border-radius: 7px; }
+  .card h3 { font-size: 0.68rem; margin-bottom: 3px; }
+  .tags { gap: 3px; margin-bottom: 4px; }
+  .tags span { background: var(--pink); font-size: 0.58rem; padding: 1px 4px; }
+  .card p { font-size: 0.62rem; line-height: 1.35; }
+
+  /* Skills: auto-width pills */
+  .skill-tag {
+    background: var(--pink);
+    width: auto;
+    padding: 5px 13px;
+    font-size: 0.74rem;
+    border-radius: 5px;
+    font-weight: 400;
+  }
+  .skill-tag:hover { background: #dda0b0; }
+
+  /* Form */
+  .form-wrapper { max-width: 100%; }
+  .form-group input,
+  .form-group textarea { background: #fff0f3; border-color: var(--pink); }
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: #c07080; }
+
+  .btn-submit {
+    background: var(--pink);
+    color: var(--text);
+    align-self: center;
+    padding: 8px 30px;
+  }
+  .btn-submit:hover { background: #dda0b0; }
+
+  /* Weather box on mobile */
+  .weather-box {
+    background: var(--pink-bg);
+    max-width: 100%;
+  }
+
+  footer { background: var(--pink); font-size: 0.7rem; }
+}
+
+/* ===========================
+   TABLET (601–900px)
+=========================== */
+@media (min-width: 601px) and (max-width: 900px) {
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .section { padding: 36px 24px; }
+  .navbar { padding: 14px 24px; }
+}

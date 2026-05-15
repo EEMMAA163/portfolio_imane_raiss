@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imane Raiss – Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Imane Raiss<span>/Portfolio</span></div>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétence</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="apropos">
+    <div class="avatar">IR</div>
+    <h1><span class="hello">Bonjour,</span> je suis <span class="name">Imane Raiss</span></h1>
+    <div class="hero-body">
+      <p class="bio">
+        Je suis Imane Raiss, étudiante en première année de Génie Informatique à l'École Supérieure de Technologie de Guélmim, section B.<br/>
+        Passionnée par la programmation et le développement web, je cherche à transformer mes apprentissages en projets concrets et fonctionnels.<br/>
+        Ce portfolio est le reflet de mon parcours et de mes compétences acquises au cours de ce semestre.<br/>
+        J'aime résoudre des problèmes, apprendre de nouvelles technologies et créer des expériences utilisateurs simples et efficaces.
+      </p>
+      <div class="hero-btns">
+        <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="projets">
+    <h2>Mes projets</h2>
+
+    <!-- FILTER BUTTONS — ADDED -->
+    <div class="filter-btns">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="js">JavaScript</button>
+      <button class="filter-btn" data-filter="api">API</button>
+    </div>
+
+    <div class="projects-box">
+      <div class="projects-grid">
+
+        <!-- data-category ADDED to each card -->
+        <div class="card" data-category="web js">
+          <h3>Portfolio Web</h3>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <p>Site web personnel pour présenter mon profil, mes compétences et mes projets réalisés durant ma formation.</p>
+        </div>
+
+        <div class="card" data-category="js">
+          <h3>ToDo App</h3>
+          <div class="tags"><span>JavaScript</span><span>DOM</span></div>
+          <p>Application de gestion de tâches avec ajout, suppression, filtrage et sauvegarde des données en temps réel.</p>
+        </div>
+
+        <div class="card" data-category="api js">
+          <h3>Météo App</h3>
+          <div class="tags"><span>API</span><span>Fetch</span><span>JS</span></div>
+          <p>Application météo qui récupère les données en temps réel via une API et les affiche de façon claire et responsive.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MÉTÉO (API) ===== -->
+  <section class="section" id="meteo">
+    <h2>Météo en direct 🌤</h2>
+    <div id="weather-box" class="weather-box">
+      <div id="weather-loader" class="loader">Chargement...</div>
+      <div id="weather-content" class="hidden">
+        <p id="weather-city" class="weather-city">📍 Guelmim</p>
+        <p id="weather-temp" class="weather-temp"></p>
+        <p id="weather-wind" class="weather-wind"></p>
+        <p id="weather-desc" class="weather-desc"></p>
+      </div>
+      <div id="weather-error" class="form-error hidden"></div>
+    </div>
+  </section>
+
+  <section class="section" id="competences">
+    <h2>Compétences</h2>
+    <div class="skills-list">
+      <span class="skill-tag">HTML</span>
+      <span class="skill-tag">CSS</span>
+      <span class="skill-tag">Figma</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">Responsive</span>
+      <span class="skill-tag">GitHub</span>
+    </div>
+  </section>
+
+
+  <section class="section" id="contact">
+    <h2>Me contacter</h2>
+    <div class="form-wrapper">
+      <div class="form-group">
+        <label for="nom">Nom complet:</label>
+        <input type="text" id="nom" placeholder="" />
+      </div>
+      <div class="form-group">
+        <label for="email">Adresse email:</label>
+        <input type="email" id="email" placeholder="" />
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" rows="5"></textarea>
+      </div>
+      <div id="form-error" class="form-error hidden"></div>
+      <div id="form-success" class="form-success hidden">✅ Message envoyé avec succès !</div>
+      <button class="btn btn-submit" id="submitBtn">Envoyer</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Imane Raiss – EST Guélmim &nbsp;|&nbsp; <em>Imane Raiss / Portfolio</em></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
